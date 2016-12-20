@@ -1,6 +1,8 @@
-# Starter Node-JS
+# generate-notes
 
-A starter project for simple node things.
+Parse a folder structure for markdown files and generate a single `json` file for use in a react app.
+
+One off `npm run build && npm start`
 
 Build the app
 

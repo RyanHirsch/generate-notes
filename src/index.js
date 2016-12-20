@@ -1,12 +1,6 @@
 import fs from 'fs';
-import path from 'path';
-
-const parentFolder = path.resolve(__dirname, '..', '..');
-
-fs.readdir(parentFolder, (err, files) => {
-  if(err) {
-    console.error(err);
-    return;
-  }
-  files.forEach(file => console.log(JSON.stringify(file, null, 2)));
-});
+import { getFiles } from './get-files';
+getFiles()
+  .then(files =>
+    fs.writeFileSync('./notes.json', JSON.stringify(files, null, 4))
+  );
